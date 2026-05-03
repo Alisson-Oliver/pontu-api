@@ -31,7 +31,7 @@ public class AuthService {
 
         User user = repository.findByEmail(email)
                 .map(u -> {
-                     u.setPhotourl(photo);
+                     u.setPhotoUrl(photo);
                     return repository.save(u);
                 })
                 .orElseGet(() -> repository.save(new User(name, email, photo)));
@@ -45,6 +45,8 @@ public class AuthService {
 
         return Jwts.builder()
                 .subject(user.getEmail())
+                .claim("name", user.getName())
+                .claim("photoUrl", user.getPhotoUrl())
                 .issuedAt(new Date())
                 .expiration(new Date(System.currentTimeMillis() + tokenExpiration.toMillis()))
                 .signWith(key)
