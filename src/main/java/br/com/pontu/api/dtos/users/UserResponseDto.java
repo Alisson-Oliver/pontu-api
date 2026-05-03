@@ -1,4 +1,4 @@
-package br.com.pontu.api.dtos;
+package br.com.pontu.api.dtos.users;
 
 import br.com.pontu.api.entities.User;
 
