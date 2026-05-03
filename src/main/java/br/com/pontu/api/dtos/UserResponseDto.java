@@ -3,7 +3,6 @@ package br.com.pontu.api.dtos;
 import br.com.pontu.api.entities.User;
 
 import java.time.LocalDateTime;
-import java.util.Optional;
 
 public record UserResponseDto(
         Long id,
