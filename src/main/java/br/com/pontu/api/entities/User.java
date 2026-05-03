@@ -29,7 +29,7 @@ public class User {
     private String email;
 
     @Column(name = "photo_url")
-    private String photourl;
+    private String photoUrl;
 
     @CreationTimestamp
     @Column(updatable = false)
@@ -41,6 +41,6 @@ public class User {
     public User(String name, String email, String photo) {
         this.name = name;
         this.email = email;
-        this.photourl = photo;
+        this.photoUrl = photo;
     }
 };
