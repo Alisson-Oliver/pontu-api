@@ -1,10 +1,12 @@
 package br.com.pontu.api.services;
 
-import br.com.pontu.api.dtos.UserResponseDto;
-import br.com.pontu.api.repositories.UserRepository;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import br.com.pontu.api.dtos.users.UserResponseDto;
+import br.com.pontu.api.entities.User;
+import br.com.pontu.api.exceptions.ResourceNotFoundException;
+import br.com.pontu.api.repositories.UserRepository;
 
 @Service
 public class UserService {
@@ -14,7 +16,12 @@ public class UserService {
     public UserResponseDto findById(Long id) {
        return repository.findById(id)
             .map(UserResponseDto::fromEntity)
-            .orElseThrow(() -> new RuntimeException("User not found"));
+            .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+    }
 
+    public void deleteById(Long id) {
+        User user = repository.findById(id)
+            .orElseThrow(() -> new ResourceNotFoundException("User not found"));
+        repository.delete(user);
     }
 }
