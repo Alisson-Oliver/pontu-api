@@ -1,5 +1,6 @@
 package br.com.pontu.api.entities;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import br.com.pontu.api.enums.TimeEntryType;
@@ -27,6 +28,9 @@ public class TimeEntry {
 
     @Column(nullable = false)
     private LocalDateTime timestamp;
+
+    @Column(nullable = false)
+    private LocalDate competenceDate;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
