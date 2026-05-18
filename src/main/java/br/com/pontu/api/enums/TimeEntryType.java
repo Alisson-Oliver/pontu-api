@@ -1,6 +1,6 @@
 package br.com.pontu.api.enums;
 
-public enum RecordType {
+public enum TimeEntryType {
     IN,
     LUNCH_START,
     LUNCH_END,
