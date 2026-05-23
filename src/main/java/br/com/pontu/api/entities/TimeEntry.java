@@ -42,4 +42,11 @@ public class TimeEntry {
     @ManyToOne
     @JoinColumn(name = "user_id", nullable = false)
     private User user;
+
+    public TimeEntry(LocalDateTime timestamp, LocalDate competenceDate,TimeEntryType type, String observation){
+       this.timestamp = timestamp;
+       this.competenceDate = competenceDate;
+       this.type = type;
+       this.observation = observation;
+    }
 }
