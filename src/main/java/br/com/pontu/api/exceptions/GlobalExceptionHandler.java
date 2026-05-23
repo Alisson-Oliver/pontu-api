@@ -1,10 +1,8 @@
 package br.com.pontu.api.exceptions;
 
-import java.net.http.HttpRequest;
 import java.time.LocalDateTime;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -80,7 +78,7 @@ public class GlobalExceptionHandler {
             LocalDateTime.now(),
             HttpStatus.INTERNAL_SERVER_ERROR.value(),
             "Internal Server Error",
-            "An unexpected error occurred.",
+            e.getMessage(),
             request.getRequestURI()
         );
 
