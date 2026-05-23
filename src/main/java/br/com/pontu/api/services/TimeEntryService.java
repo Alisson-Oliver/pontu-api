@@ -6,8 +6,8 @@ import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import br.com.pontu.api.dtos.records.CreateTimeEntryDto;
-import br.com.pontu.api.dtos.records.TimeEntryResponseDto;
+import br.com.pontu.api.dtos.timeEntry.CreateTimeEntryDto;
+import br.com.pontu.api.dtos.timeEntry.TimeEntryResponseDto;
 import br.com.pontu.api.entities.TimeEntry;
 import br.com.pontu.api.entities.User;
 import br.com.pontu.api.exceptions.BusinessException;

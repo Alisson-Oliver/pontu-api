@@ -3,8 +3,8 @@ package br.com.pontu.api.controllers;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.pontu.api.dtos.records.CreateTimeEntryDto;
-import br.com.pontu.api.dtos.records.TimeEntryResponseDto;
+import br.com.pontu.api.dtos.timeEntry.CreateTimeEntryDto;
+import br.com.pontu.api.dtos.timeEntry.TimeEntryResponseDto;
 import br.com.pontu.api.entities.User;
 import br.com.pontu.api.services.TimeEntryService;
 import jakarta.validation.Valid;
