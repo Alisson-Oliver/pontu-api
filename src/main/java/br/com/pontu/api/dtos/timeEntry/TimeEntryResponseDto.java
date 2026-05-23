@@ -1,4 +1,4 @@
-package br.com.pontu.api.dtos.records;
+package br.com.pontu.api.dtos.timeEntry;
 
 import java.time.LocalDateTime;
 import java.util.List;
