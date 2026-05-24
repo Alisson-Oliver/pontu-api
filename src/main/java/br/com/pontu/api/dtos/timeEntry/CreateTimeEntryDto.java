@@ -21,7 +21,7 @@ public record CreateTimeEntryDto(
 
 ) {
     public TimeEntry toEntity() {
-        LocalDateTime timestamp = (this.timestamp != null) ? this.timestamp : LocalDateTime.now();
+        LocalDateTime timestamp = (this.timestamp != null) ? this.timestamp : LocalDateTime.now().withNano(0);
         LocalDate competenceDate = timestamp.toLocalDate();
 
         return new TimeEntry(
