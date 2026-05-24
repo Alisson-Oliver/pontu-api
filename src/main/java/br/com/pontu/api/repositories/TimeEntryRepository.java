@@ -9,8 +9,7 @@ import br.com.pontu.api.enums.TimeEntryType;
 
 import java.util.List;
 
-
-public interface TimeEntryRespository extends JpaRepository<TimeEntry, Long> {
+public interface TimeEntryRepository extends JpaRepository<TimeEntry, Long> {
     boolean existsByTypeAndCompetenceDate(TimeEntryType type, LocalDate competenceDate, Long userId);
     List<TimeEntry> findByCompetenceDateAndUserId(LocalDate competenceDate, Long userId);
     List<TimeEntry> findByUserId(Long id);
