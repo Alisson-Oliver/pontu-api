@@ -19,6 +19,10 @@ public class UserService {
             .orElseThrow(() -> new ResourceNotFoundException("User not found"));
     }
 
+    public User save(User user) {
+        return repository.save(user);
+    }
+
     public void deleteById(Long id) {
         User user = repository.findById(id)
             .orElseThrow(() -> new ResourceNotFoundException("User not found"));
