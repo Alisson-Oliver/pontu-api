@@ -1,12 +1,16 @@
 package br.com.pontu.api.entities;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import br.com.pontu.api.enums.TimeEntryState;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -43,6 +47,13 @@ public class User {
     @OneToOne()
     @JoinColumn(name = "config_id", referencedColumnName = "id")
     private Config config;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = true)
+    private TimeEntryState currentDayState;
+
+    @Column(nullable = true)
+    private LocalDate stateDate;
     
     public User(String name, String email, String photo) {
         this.name = name;

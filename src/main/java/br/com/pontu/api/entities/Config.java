@@ -23,7 +23,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.MapKeyColumn;
 import jakarta.persistence.MapKeyEnumerated;
+import lombok.Data;
 
+@Data
 @Entity(name = "tb_configs")
 public class Config {
 
@@ -39,6 +41,9 @@ public class Config {
 
     @Column(nullable = false)
     private LocalTime durationLunchBreak = LocalTime.of(1, 0);
+
+    @Column(nullable = false)
+    private boolean mandatoryLunch = true;
 
     @Column(nullable = false)
     private Double overtimePercentage = 50.0;
